@@ -15,12 +15,11 @@ class ChainCalendar(val year: Int) {
     fun table():HTMLTableElement{
         val total = 7 * 54
 
-        val width = 21
+        val width = 3 * 7
         val height = total / width
 
         val table = document.createElement("table") as HTMLTableElement
 
-        val year = 2019
         var dayOfTheYear = 1
 
         val firstDayOfTheYear = Date(year, 0, 1, 1, 1, 1)
