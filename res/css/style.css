@@ -6,3 +6,49 @@ h1{
     width: 50%;
     height: 10cm;
 }
+
+table{
+    border-collapse: collapse;
+}
+
+table td{
+    border: 1px solid black;
+}
+
+td div{
+    width: 1cm;
+    height: 1cm;
+    position: relative;
+}
+
+td div h2{
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    vertical-align: center;
+}
+
+td.sunday{
+    border-color: red;
+    color: red;
+}
+
+td.friday{
+    border-right: 0;
+}
+
+td.saturday{
+    border-color: darkgray;
+    color: darkgray;
+    border-right: 0;
+}
+
+td.wrongYear{
+    opacity: .4 !important;
+    border-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+td.monthStart{
+    border-left: 4px solid black;
+}

@@ -1,8 +1,11 @@
-import com.er453r.calendars.external.ace
-import jspdf.jsPDF
-import kotlinx.coroutines.*
-import org.w3c.dom.*
+//import com.er453r.calendars.external.ace
+//import jspdf.jsPDF
+//import kotlinx.coroutines.*
+//import org.w3c.dom.*
+import com.er453r.calendars.ChainCalendar
+import org.w3c.dom.HTMLHeadingElement
 import kotlin.browser.document
+//import kotlin.js.Date
 
 fun main() {
     console.log("Calendars start")
@@ -46,29 +49,16 @@ fun main() {
 //
 //        document.body?.appendChild(header)
 
-        val total = 7 * 54
+        for(year in 2016..2022){
+            val header = document.createElement("h2") as HTMLHeadingElement
 
-        val width = 7
-        val height = total / width
+            header.innerHTML = year.toString()
 
-        val table = document.createElement("table") as HTMLTableElement
+            document.body?.appendChild(header)
 
-        document.body?.appendChild(table)
+            val calendar = ChainCalendar(year)
 
-
-        for(y in 0 until height) {
-            val row = document.createElement("tr") as HTMLTableRowElement
-
-            for (x in 0 until width) {
-                val cell = document.createElement("td") as HTMLTableCellElement
-
-                cell.innerHTML = "$y / $x"
-
-                row.appendChild(cell)
-            }
-
-            table.appendChild(row)
+            document.body?.appendChild(calendar.table())
         }
-
     })
 }
