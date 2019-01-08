@@ -9,6 +9,7 @@ h1{
 
 table{
     border-collapse: collapse;
+    margin: 0 auto;
 }
 
 table td{
@@ -49,6 +50,15 @@ td.wrongYear{
     border-color: rgba(0, 0, 0, 0.2);
 }
 
+td.box{
+    border-style: dashed;
+}
+
 td.monthStart{
     border-left: 4px solid black;
+}
+
+.yearTitle{
+    float: left;
+    margin-right: 1em;
 }
